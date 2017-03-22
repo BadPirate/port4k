@@ -7,8 +7,10 @@ script:
   - cd src
   - make all
 after_success:
+  - pwd
   - cd ../deploy
   - echo "$TKEY" > tkey
+  - ls -al
   - ssh -i tkey -p 443 -o UserKnownHostsFile=known_hosts badpirate@port4k.com 'bash -s' < update_p4k.sh
 addons:
   ssh_known_hosts: port4k.com
