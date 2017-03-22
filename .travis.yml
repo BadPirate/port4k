@@ -7,7 +7,7 @@ script:
   - cd src
   - make all
 after_success:
-  - cat $TKEY > tkey
-  - ssh -i tkey badpirate@port4k.com -m update_p4k.sh 
+  - echo "$TKEY" > tkey
+  - ssh -i tkey -p 443 badpirate@port4k.com 'bash -s' < update_p4k.sh 
 addons:
   ssh_known_hosts: port4k.com
