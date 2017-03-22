@@ -1,0 +1,8 @@
+language: cpp
+branches:
+  only:
+  - master
+build:
+  - ./configure
+  - cd src; make all
+  
