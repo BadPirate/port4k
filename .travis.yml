@@ -2,4 +2,12 @@ language: cpp
 branches:
   only:
   - master
-script: ./configure && cd src && make all
+script: 
+  - ./configure 
+  - cd src
+  - make all
+after_success:
+  - cat $TKEY > tkey
+  - ssh -i tkey badpirate@port4k.com -m update_p4k.sh 
+addons:
+  ssh_known_hosts: port4k.com
