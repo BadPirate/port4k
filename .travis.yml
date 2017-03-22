@@ -9,7 +9,6 @@ script:
 after_success:
   - cd ../deploy
   - echo -e $TKEY > tkey
-  - cat tkey
   - chmod 0600 tkey
   - ssh -i tkey -p 443 -o UserKnownHostsFile=known_hosts badpirate@port4k.com 'bash -s' < update_p4k.sh
 addons:
