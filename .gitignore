@@ -1,3 +1,6 @@
 config.*
 conf.h
 Makefile
+bin
+*.o
+.accepted
