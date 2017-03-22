@@ -3,3 +3,4 @@ conf.h
 Makefile
 bin
 *.o
+lib/etc
