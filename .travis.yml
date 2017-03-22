@@ -8,6 +8,6 @@ script:
   - make all
 after_success:
   - echo "$TKEY" > tkey
-  - ssh -i tkey -p 443 badpirate@port4k.com 'bash -s' < update_p4k.sh 
+  - ssh -i tkey -p 443 -o UserKnownHostsFile=known_hosts badpirate@port4k.com 'bash -s' < update_p4k.sh
 addons:
   ssh_known_hosts: port4k.com
